@@ -7,6 +7,7 @@ function cardEffect(event) {
     const cardHeight = card.offiseHeight
     const centerX = card.offiseLeft + cardWidth/2
     const centerY = card.offiseTop + cardHeight/2
+    const positionX = event.clientX - centerX
+
     console.log(centerY)
-    console.log(centerX)
 }
