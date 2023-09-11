@@ -10,5 +10,10 @@ function cardEffect(event) {
     const positionX = event.clientX - centerX
     const positionY = event.clientY - centerY
 
-    console.log(positionX,positionY)
+    const rotateX = ((+1) * 25*positionY/(cardHeight/2)).toFixed(2) // esse toFixed(2) é para pegar apenas duas casa decimais
+    const rotateY = ((-1) * 25*positionX/(cardWidth/2)).toFixed(2)
+
+    console.log(rotateX,rotateY)
+
+    card.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
 }
