@@ -1,6 +1,9 @@
 const card = document.querySelector('.container')
 
 card.addEventListener("mousemove", cardEffect)
+card.addEventListener("mouseleave", cardBack)
+card.addEventListener("mouseenter", cardEnter)
+
 
 function cardEffect(event) {
     const cardWidth = card.offsetWidth
@@ -16,4 +19,21 @@ function cardEffect(event) {
     console.log(rotateX,rotateY)
 
     card.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+}
+
+function cardBack(event) {
+    card.style.transform = `perspective(500px) rotateX(0deg) rotateY(0deg)`
+    cardTransition()
+}
+
+function cardTransition() {
+    clearInterval
+    card.style.transition = 'transform 400ms'
+    card.transitionId = setTimeout (() => {
+        card.style.transition = ''
+    },400)
+}
+
+function cardEnter(event) {
+    cardTransition()
 }
