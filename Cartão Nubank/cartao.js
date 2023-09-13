@@ -34,6 +34,3 @@ function cardTransition() {
     },400)
 }
 
-function cardEnter(event) {
-    cardTransition()
-}
